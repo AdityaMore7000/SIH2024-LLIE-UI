@@ -9,6 +9,7 @@ function DropZone() {
   useEffect(() => {
     return () => {
       images.forEach(image => URL.revokeObjectURL(image.preview));
+      console.log(images)
     };
   }, [images]);
 
@@ -55,9 +56,9 @@ function DropZone() {
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto p-6">
+    <div className=" w-[50vw] mx-auto px-2">
       <div
-        className={`relative w-full h-48 border-2 border-dashed rounded-lg cursor-pointer transition-colors duration-300
+        className={`relative w-full h-[80%] border-2 border-dashed rounded-lg cursor-pointer transition-colors duration-300
           ${isDragging ? 'bg-blue-500 border-blue-400' : 'bg-[#212121] border-gray-500'}
           ${images.length > 0 ? 'bg-gray-800' : ''}`}
         onDragOver={handleDragOver}
